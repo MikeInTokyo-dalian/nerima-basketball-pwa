@@ -1,6 +1,6 @@
-import { BASE_URL, NerimaApiClient, type ApiClientOptions } from './api'
-import { isAtOrAfter, rowKey, sortRows, weekdayForDate } from '../shared/filters'
-import type { AvailabilityRow, Facility, SearchCriteria, SearchProgress, SearchResult } from '../shared/types'
+import { BASE_URL, NerimaApiClient, type ApiClientOptions } from './api.js'
+import { isAtOrAfter, rowKey, sortRows, weekdayForDate } from '../shared/filters.js'
+import type { AvailabilityRow, Facility, SearchCriteria, SearchProgress, SearchResult } from '../shared/types.js'
 
 const USE_TYPE_CODE = '220020'
 
