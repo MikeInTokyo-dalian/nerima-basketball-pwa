@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" />
+    <meta name="theme-color" content="#d51f26" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="体育馆空场" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/icons/icon-180.png" />
+    <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>体育馆空场</title>
+  </head>
+  <body>
+    <div class="app">
+      <header class="hero">
+        <div class="brand-row">
+          <div class="brand"><img src="/icons/icon.svg" alt="" /><div><h1>体育馆空场</h1><p>NERIMA COURT FINDER · 篮球</p></div></div>
+          <button class="square-button" id="filterButton" aria-label="筛选">⌘</button>
+        </div>
+        <section class="scoreboard">
+          <div><small>今日战报 · 找到空场</small><div class="score"><strong id="resultCount">—</strong><span>个场次</span></div><p id="updatedText">准备查询练马区体育馆</p></div>
+          <button id="refreshButton">↻ 刷新</button>
+        </section>
+      </header>
+
+      <main>
+        <div class="quick-filters" id="quickFilters">
+          <button class="active" data-time="">全部时间</button>
+          <button data-time="12:00">12:00 后</button>
+          <button data-time="18:00">18:00 后</button>
+          <button id="moreFilterButton">更多筛选</button>
+        </div>
+        <div class="section-title"><h2>最近可用</h2><span id="statusText">正在载入场馆…</span></div>
+        <section id="results" class="results" aria-live="polite"></section>
+      </main>
+
+      <nav class="tabbar" aria-label="主导航">
+        <button class="active"><b>⌕</b><span>空场</span></button>
+        <button disabled><b>♡</b><span>收藏</span></button>
+        <button disabled><b>◷</b><span>查询记录</span></button>
+        <button id="installButton"><b>⇩</b><span>安装</span></button>
+      </nav>
+
+      <div class="backdrop" id="filterSheet" hidden>
+        <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="filterTitle">
+          <div class="grab"></div><h3 id="filterTitle">筛选空场 / SELECT COURT</h3>
+          <fieldset><legend>星期</legend><div class="choices" id="weekdayChoices"></div></fieldset>
+          <fieldset><legend>最早开始时间</legend><div class="choices" id="timeChoices"></div></fieldset>
+          <fieldset><legend>体育馆</legend><div class="choices facilities" id="facilityChoices"></div></fieldset>
+          <button class="apply" id="applyButton">开始查询</button>
+        </section>
+      </div>
+
+      <div class="install-tip" id="installTip" hidden>
+        <button aria-label="关闭">×</button><strong>安装到 iPhone</strong>
+        <p>点击 Safari 底部的“分享”按钮，再选择“添加到主屏幕”。</p>
+      </div>
+    </div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

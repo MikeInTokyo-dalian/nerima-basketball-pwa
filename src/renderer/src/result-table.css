@@ -1,0 +1,81 @@
+.table-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 2px 9px;
+  color: #718079;
+  font-size: 12px;
+}
+.table-toolbar button {
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  color: #1d6c4d;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.column-filter { position: relative; }
+.column-filter summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 72px;
+  cursor: pointer;
+  list-style: none;
+}
+.column-filter summary::-webkit-details-marker { display: none; }
+.filter-arrow { color: #bcd8cc; font-size: 8px; transition: .15s; }
+.column-filter[open] .filter-arrow { transform: rotate(180deg); }
+.column-filter.is-filtered summary,
+.column-filter.is-filtered .filter-arrow { color: #fff4a8; }
+.filter-menu {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 10px);
+  left: -8px;
+  width: max-content;
+  min-width: 190px;
+  max-width: 290px;
+  padding: 10px;
+  border: 1px solid #cbd9d4;
+  border-radius: 10px;
+  background: #fff;
+  color: #34483f;
+  box-shadow: 0 12px 34px rgba(17,49,38,.24);
+  letter-spacing: 0;
+}
+.filter-menu::before {
+  position: absolute;
+  top: -6px;
+  left: 18px;
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid #cbd9d4;
+  border-left: 1px solid #cbd9d4;
+  background: #fff;
+  content: "";
+  transform: rotate(45deg);
+}
+th:nth-last-child(-n+2) .filter-menu { right: -8px; left: auto; }
+th:nth-last-child(-n+2) .filter-menu::before { right: 18px; left: auto; }
+.filter-actions { display: flex; gap: 6px; padding-bottom: 8px; border-bottom: 1px solid #e4ebe8; }
+.filter-actions button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 6px;
+  padding: 5px 8px;
+  background: #e7f0ec;
+  color: #285b48;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+}
+.filter-options { display: grid; gap: 2px; max-height: 235px; overflow: auto; padding-top: 7px; }
+.filter-options label { display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 6px; border-radius: 5px; font-weight: 400; }
+.filter-options label:hover { background: #edf6f2; }
+.filter-options input { margin: 0; accent-color: #247153; }
+.filter-options span { overflow: hidden; text-overflow: ellipsis; }
+.no-filter-results { padding: 34px; color: #718079; text-align: center; }

@@ -1,0 +1,16 @@
+{
+  "name": "体育馆空场查询",
+  "short_name": "体育馆空场",
+  "description": "查询练马区篮球体育馆的可预约空场",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f5f1eb",
+  "theme_color": "#d51f26",
+  "lang": "zh-CN",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

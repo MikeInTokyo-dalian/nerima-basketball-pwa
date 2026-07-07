@@ -1,0 +1,16 @@
+availability.csv
+availability.json
+availability.html
+.env
+*.log
+node_modules/
+out/
+dist/
+mobile-dist/
+mobile-package/
+win-unpacked/
+coverage/
+test-results/
+playwright-report/
+.vite/
+*.tsbuildinfo

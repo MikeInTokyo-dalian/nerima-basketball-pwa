@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: nerima-court-finder
+    runtime: node
+    plan: free
+    buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm mobile:build
+    startCommand: node mobile-dist/server/server.mjs
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 22
