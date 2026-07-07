@@ -1,0 +1,20 @@
+{
+  "buildCommand": "corepack enable && pnpm mobile:build",
+  "installCommand": "corepack enable && pnpm install --frozen-lockfile",
+  "outputDirectory": "mobile-dist/public",
+  "framework": null,
+  "functions": {
+    "api/search.ts": {
+      "maxDuration": 60
+    },
+    "api/facilities.ts": {
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
