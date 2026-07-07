@@ -59,8 +59,16 @@ export class NerimaScraper {
     const rows = new Map<string, AvailabilityRow>()
     const warnings: string[] = []
     const checkedAt = formatLocalDateTime(new Date())
+    const concurrency = selected.length > 1 ? 3 : 1
+    let nextFacilityIndex = 0
 
-    for (const [facilityIndex, facility] of selected.entries()) {
+    await Promise.all(Array.from({ length: Math.min(concurrency, selected.length) }, async () => {
+    while (nextFacilityIndex < selected.length) {
+      const facilityIndex = nextFacilityIndex++
+      const facility = selected[facilityIndex]
+      if (!facility) continue
+      const client = this.createClient()
+      await client.initialize(signal)
       signal.throwIfAborted()
       onProgress({
         phase: 'facility',
@@ -125,6 +133,7 @@ export class NerimaScraper {
     }
 
     onProgress({ phase: 'finishing', message: '正在整理查询结果…' })
+    }))
     return { rows: sortRows([...rows.values()]), warnings, checkedAt }
   }
 
