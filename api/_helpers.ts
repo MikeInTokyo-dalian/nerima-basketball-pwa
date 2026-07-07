@@ -1,4 +1,4 @@
-import { NerimaScraper } from '../src/main/scraper'
+import { NerimaScraper } from '../src/main/scraper.js'
 
 export const scraper = new NerimaScraper()
 

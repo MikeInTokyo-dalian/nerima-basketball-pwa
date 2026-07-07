@@ -1,4 +1,4 @@
-import { errorMessage, methodNotAllowed, requestSignal, scraper, sendJson } from './_helpers'
+import { errorMessage, methodNotAllowed, requestSignal, scraper, sendJson } from './_helpers.js'
 
 export default async function handler(request: any, response: any): Promise<void> {
   if (request.method !== 'GET') return methodNotAllowed(response, ['GET'])

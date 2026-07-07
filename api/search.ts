@@ -1,5 +1,5 @@
-import { errorMessage, methodNotAllowed, requestSignal, scraper, sendJson } from './_helpers'
-import type { SearchCriteria } from '../src/shared/types'
+import { errorMessage, methodNotAllowed, requestSignal, scraper, sendJson } from './_helpers.js'
+import type { SearchCriteria } from '../src/shared/types.js'
 
 export default async function handler(request: any, response: any): Promise<void> {
   if (request.method !== 'POST') return methodNotAllowed(response, ['POST'])
